@@ -36,8 +36,8 @@ router.post('/add',async(req,res,next)=>{
         let newTournament = Tournament({
         "Name":req.body.Name,
         "Location":req.body.Location,
-        "Start Date":req.body.StartDate,
-        "End Date":req.body.EndDate
+        "Start":req.body.Start,
+        "End":req.body.End
         })
         Tournament.create(newTournament).then(()=>{
             res.redirect('/tournamentslist')
@@ -74,8 +74,8 @@ router.post('/edit/:id',async(req,res,next)=>{
             "_id":id,
             "Name":req.body.Name,
             "Location":req.body.Location,
-            "Start Date":req.body.StartDate,
-            "End Date":req.body.EndDate
+            "Start":req.body.Start,
+            "End":req.body.End
         })
         Tournament.findByIdAndUpdate(id,updatedTournament).then(()=>{
             res.redirect('/tournamentslist')

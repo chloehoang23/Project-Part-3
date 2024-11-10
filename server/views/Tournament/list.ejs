@@ -3,10 +3,12 @@
     <main class="container">
         <div class="row">
             <div class="offset-md-1 col-m-6">
-                <h3><%= title %></h3>
-                <a href="/tournamentslist/add" class="btn btn-primary" role="button">
+                <div class="title">
+                    <h1><%= title %></h1>
+                </div>
+                <a href="/tournamentslist/add" class="btn btn-primary mb-3" role="button">
                     <i class="fas fa-plus-circle"></i>Add Tournament</a>
-                <table class="table table-bordered table-striped table-hover">
+                <table class="table table-bordered table-striped table-hover table-sm">
                     <!--Table Header-->
                     <tr class="d-flex">
                         <th class="text-center col-3">Name</th> 
@@ -18,8 +20,8 @@
                         <tr class="d-flex">
                             <td class="text-center col-3"><%= TournamentList[count].Name%></td> 
                             <td class="text-center col-2"><%= TournamentList[count].Location%></td>
-                            <td class="text-center col-2"><%= TournamentList[count].StartDate%></td>
-                            <td class="text-center col-2"><%= TournamentList[count].EndDate%></td>
+                            <td class="text-center col-2"><%= TournamentList[count].Start%></td>
+                            <td class="text-center col-2"><%= TournamentList[count].End%></td>
                             <td class="text-center col-1">
                                 <a href="/tournamentslist/edit/<%= TournamentList[count]._id%>"
                                     class="btn btn-primary btn-sm">

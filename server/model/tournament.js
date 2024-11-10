@@ -3,9 +3,9 @@ let mongoose = require('mongoose')
 // create a model class
 let tournamentModel = mongoose.Schema({
     Name:String,
-    Author:String,
-    StartDate:String,
-    EndDate:String
+    Location:String,
+    Start:String,
+    End:String
 },
 {
     collection:"Bio_books"

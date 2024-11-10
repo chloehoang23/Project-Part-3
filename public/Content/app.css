@@ -2,14 +2,32 @@ body {
     background-color: lightgrey !important
 }
 
-/* Contact Section*/
+
+/* Tournament Section */
+.title h1 {
+    color: black;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.container {
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+
+/* Contact Section */
 .contact .title {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 30px;
+    padding: 20px;
 }
 
 .contact i {

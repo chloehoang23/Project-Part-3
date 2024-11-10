@@ -3,7 +3,9 @@
 <div class="container">
     <div class="row">
         <div class="offset-md-3 col-md-6">
-            <h1><%= title %></h1>
+            <div class="title">
+                <h1><%= title %></h1>
+            </div>
             <form class="form" method="POST">
                 <div class="form-group">
                     <label for="nameTextField">Tournament Name</label>
@@ -16,14 +18,14 @@
                     placeholder="Enter the Tournament's Location" name="Location" value="<%= Tournament.Location %>" required>
                 </div>
                 <div class="form-group">
-                    <label for="startdateTextField">Tournament's Start Date</label>
-                    <input type="text" class="form-control" id="startdateTextField" 
-                    placeholder="Enter the Tournament's Start Date" name="Start Date" value="<%= Tournament.StartDate %>" required>
+                    <label for="startTextField">Tournament's Start Date</label>
+                    <input type="text" class="form-control" id="startTextField" 
+                    placeholder="Enter the Tournament's Start Date" name="Start" value="<%= Tournament.Start %>" required>
                 </div>
                 <div class="form-group">
-                    <label for="enddateTextField">Tournament's End Date</label>
-                    <input type="text" class="form-control" id="enddateTextField" 
-                    placeholder="Enter the Tournament's End Date" name="End Date" value="<%= Tournament.EndDate %>" required>
+                    <label for="endTextField">Tournament's End Date</label>
+                    <input type="text" class="form-control" id="endTextField" 
+                    placeholder="Enter the Tournament's End Date" name="End" value="<%= Tournament.EndDate %>" required>
                 </div>
         <button class="btn btn-primary" type="submit">
             <i class="fas fa-edit"></i>
