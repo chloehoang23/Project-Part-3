@@ -1,0 +1,44 @@
+<!--Nav Bar-->
+<style>
+  .navbar-nav .nav-link {
+    color: white !important;
+  }
+</style>
+<nav class="navbar navbar-expand-lg bg-danger">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">
+        <img src="/Assets/images/bwf.jpg" alt="BWF" style="width: 75px; height: auto;">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <% if(title=='Home') { %>
+            <a class="nav-link active"  href="/home">
+            <% } else { %>
+                <a class="nav-link" href="/home">
+            <% } %>
+              <i class="fa-solid fa-house"></i> Home</a>
+          </li>
+          <li class="nav-item">
+            <% if(title=='Tournaments') { %>
+            <a class="nav-link active"  href="/tournamentslist">
+            <% } else { %>
+                <a class="nav-link" href="/tournamentslist">
+            <% } %>
+              <i class="fa-solid fa-medal"></i> Tournaments</a>
+          </li>
+          <li class="nav-item">
+            <% if(title=='Contact Us') { %>
+              <a class="nav-link active" href="/contact">
+            <% } else { %>
+              <a class="nav-link" href="/contact">
+            <% } %>
+              <i class="fa-solid fa-phone"></i> Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
