@@ -9,14 +9,14 @@
                 <table class="table table-bordered table-striped table-hover">
                     <!--Table Header-->
                     <tr class="d-flex">
-                        <th class="text-center col-2">Name</th> 
+                        <th class="text-center col-3">Name</th> 
                         <th class="text-center col-2">Location</th>
                         <th class="text-center col-2">Start Date</th>
                         <th class="text-center col-2">End Date</th>
                     </tr>
                     <% for(let count=0; count<TournamentList.length; count++) { %>
                         <tr class="d-flex">
-                            <td class="text-center col-2"><%= TournamentList[count].Name%></td> 
+                            <td class="text-center col-3"><%= TournamentList[count].Name%></td> 
                             <td class="text-center col-2"><%= TournamentList[count].Location%></td>
                             <td class="text-center col-2"><%= TournamentList[count].StartDate%></td>
                             <td class="text-center col-2"><%= TournamentList[count].EndDate%></td>

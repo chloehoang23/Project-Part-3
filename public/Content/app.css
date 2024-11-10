@@ -1,1 +1,25 @@
-/* background-color: white <important> */
+body {
+    background-color: lightgrey !important
+}
+
+/* Contact Section*/
+.contact .title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+}
+
+.contact i {
+    color: #dc3545; 
+    font-size:200%; 
+    justify-content: center;
+    text-align: center;
+}
+
+.contact p {
+    margin-top: 20px;
+    font-weight: 500;
+}

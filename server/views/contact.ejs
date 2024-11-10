@@ -1,0 +1,50 @@
+<% include Partials/header.ejs %>
+<% include Partials/main_nav.ejs %>
+<!--Main Content-->
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    .column {
+      width: 30%;
+      height: 300px;
+      border-radius: 10px;
+      margin: 15px;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    
+    .row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    </style>
+
+    <!--Reference: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_three_columns-->
+<div class="contact">
+    <div class="title">
+        <h1><%= title %></h1>
+    </div>
+    
+    <div class="row">
+      <div class="column">
+        <h1><i class="fa-regular fa-envelope"></i></h1>
+        <p>Contact us via Email<br>chloe.hoang1@ontariotechu.net<br>joshua.nguyen@ontariotechu.net</p>
+      </div>
+      <div class="column">
+        <h1><i class="fa-brands fa-instagram"></i></h1>
+        <p>Contact us via Instagram<br>@hoang_chloe<br>@joshua.nguyen05</p>
+      </div>
+      <div class="column">
+        <h1><i class="fa-solid fa-phone"></i></h1>
+        <p>Contact us via Phone Call<br>+1 416-844-6515<br>+1 647-303-7157</p>
+      </div>
+    </div>
+</div>
+<% include Partials/footer.ejs %>
