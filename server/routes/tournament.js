@@ -1,6 +1,16 @@
 var express = require('express');
 var router = express.Router();
+let mongoose = require('mongoose');
+
 let Tournament = require('../model/tournament')
+
+function requireAuth(req,res,next){
+    if(req.isAuthenticated())
+    {
+        return res.redirect('/login')
+    }
+    next();
+}
 /*CRUD*/
 /*Read Operation --> Get route for the tournament list*/
 router.get('/',async(req,res,next)=>{
@@ -8,6 +18,7 @@ router.get('/',async(req,res,next)=>{
         const TournamentList = await Tournament.find();
         res.render('Tournament/list',{
             title:'Tournaments', 
+            displayName:req.user ? req.user.displayName:'',
             TournamentList:TournamentList
         })
     }
@@ -21,7 +32,8 @@ router.get('/',async(req,res,next)=>{
 router.get('/add',async(req,res,next)=>{
     try{
         res.render('Tournament/add',{
-            title:"Add Tournament"
+            title:"Add Tournament",
+            displayName:req.user ? req.user.displayName:''
         });
     }
     catch(err){
@@ -57,6 +69,7 @@ router.get('/edit/:id',async(req,res,next)=>{
         res.render('Tournament/edit',
             {
                 title:'Edit Tournament',
+                displayName:req.user ? req.user.displayName:'',
                 Tournament:TournamentToEdit
             }
         )
@@ -71,11 +84,11 @@ router.post('/edit/:id',async(req,res,next)=>{
     try{
         let id = req.params.id;
         let updatedTournament = Tournament({
-            "_id":id,
-            "Name":req.body.Name,
-            "Location":req.body.Location,
-            "Start":req.body.Start,
-            "End":req.body.End
+        "_id":id,
+        "Name":req.body.Name,
+        "Location":req.body.Location,
+        "Start":req.body.Start,
+        "End":req.body.End
         })
         Tournament.findByIdAndUpdate(id,updatedTournament).then(()=>{
             res.redirect('/tournamentslist')
