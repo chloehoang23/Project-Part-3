@@ -8,7 +8,7 @@ let tournamentModel = mongoose.Schema({
     End:String
 },
 {
-    collection:"Bio_books"
+    collection:"Tournaments"
 }
 )
 module.exports = mongoose.model('Tournament', tournamentModel)
