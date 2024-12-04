@@ -9,6 +9,16 @@ let usersRouter = require('../routes/users');
 let tournamentRouter = require('../routes/tournament');
 
 let app = express();
+let cors = require('cors')
+// create a user model instance
+let userModel = require('../model/User')
+let User = userModel.User;
+let session = require('express-session')
+let passport = require('passport')
+let passportLocal = require('passport-local')
+let flash = require('connect-flash')
+passport.use(User.createStrategy());
+let localStrategy = passportLocal.Strategy 
 let mongoose = require('mongoose');
 let DB = require('./db');
 // point my mongoose to the URI
@@ -21,6 +31,20 @@ mongoDB.once('open',()=>(
 mongoose.connect(DB.URI,{useNewURIParser:true,
   useUnifiedTopology:true
 })
+// Set-up session here
+app.use(session({
+  secret:"SomeSecret",
+  saveUninitialized:false,
+  resave:false
+}))
+// initialize the flash
+app.use(flash())
+// serialize and deserialize the user information
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+// initialize the passport
+app.use(passport.initialize());
+app.use(passport.session());
 // view engine setup
 app.set('views', path.join(__dirname, '../views'));
 app.set('view engine', 'ejs');
