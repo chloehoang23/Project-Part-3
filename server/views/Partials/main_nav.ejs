@@ -1,4 +1,4 @@
-<!--Nav Bar-->
+<!-- Nav Bar -->
 <style>
   .navbar a {
     color: white !important;
@@ -6,14 +6,20 @@
 </style>
 <nav class="navbar navbar-expand-lg bg-danger">
     <div class="container-fluid">
-      <a class="navbar-brand" href="/">
-        Chloe Hoang and Joshua Nguyen
-      </a>
+      <!-- Wrap the logo and toggler in a flex container -->
+      <div class="d-flex align-items-center">
+        <a class="navbar-brand" href="/">
+          <img class="logo" src="/Assets/images/logo.png" alt="Logo">
+        </a>
+      <!-- Toggler button now next to logo -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ms-auto">
+    </div>
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto">
+        <% if(typeof displayName == 'string' && displayName) { %>
           <li class="nav-item">
             <% if(title=='Home') { %>
             <a class="nav-link active"  href="/home">
@@ -22,14 +28,16 @@
             <% } %>
               <i class="fa-solid fa-house"></i> Home</a>
           </li>
+  
           <li class="nav-item">
             <% if(title=='Tournaments') { %>
-            <a class="nav-link active"  href="/tournamentslist">
+            <a class="nav-link active" href="/tournamentslist">
             <% } else { %>
                 <a class="nav-link" href="/tournamentslist">
             <% } %>
               <i class="fa-solid fa-medal"></i> Tournaments</a>
           </li>
+  
           <li class="nav-item">
             <% if(title=='Contact Us') { %>
               <a class="nav-link active" href="/contact">
@@ -38,7 +46,21 @@
             <% } %>
               <i class="fa-solid fa-phone"></i> Contact Us</a>
           </li>
-        </ul>
-      </div>
+          <li class="nav-item">
+            <a href="/logout" class="nav-link">
+              <i class="fas fa-lg fa-sign-out-alt"></i>
+              Logout
+            </a>
+          </li>
+          <% } else { %>
+            <li class="nav-item">
+              <a href="/login" class="nav-link">
+                <i class="fas fa-lg fa-sign-in-alt"></i>
+                Login
+              </a>
+            </li>
+            <% } %>
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>
